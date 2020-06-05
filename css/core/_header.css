@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/* Набросок стилей для шапки
+ ----------------------------------------------------------------------------- */
+.header {
+  background-color: transparent;
+}
+.header__logo {
+  background-color: transparent;
+  width: 96px;
+}
+.header__stiky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.header__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 57px 17px 0;
+}
+.header__left {
+  padding-top: 8px;
+}
