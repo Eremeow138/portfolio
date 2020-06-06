@@ -3,14 +3,14 @@
 // Переменная для задания основоного шрифта на сайте
 $main_font_family: "Roboto";
 // Основной цвет текста на сайте
-$main_color: #000;
+$main_color: #727272;
 // Основной line height
 $main_line_height: 1.2;
 // Основной размер шрифта
 $main_font_size: 16px;
 
 // Ширина для container_center
-$container_width: 1200px;
+$container_width: 1185px;
 
 // Высота подвала (если не нужна, можно поставит в auto)
 $footer_height: 100px;
@@ -21,7 +21,7 @@ $color_success: #36a566;
 $color_info: #03a9f4;
 $color_warning: #fca33e;
 $color_danger: #ff1a1a;
-$color_withe: #ffffff;
+$color_white: #ffffff;
 
 // Благодаря такому набору можно создавать цветовые модификаторы для элементив
 // Пример использования есть у класса btn
@@ -55,7 +55,7 @@ $grid_padding: 20px;
 // Перменные для элементов форм
 // Input color
 $input_color: $main_color;
-$input_bg_color: #fff;
+$input_bg_color: $color_white;
 $input_border_color: #ddd;
 $input_placeholder_color: #ddd;
 
@@ -84,9 +84,9 @@ $input_error_border_color: red;
 $input_error_placeholder_color: red;
 
 // Button variables
-$btn_default_bg_color: #ddd;
-$btn_default_text_color: $main_color;
-$btn_contrast_text_color: $color_withe;
+$btn_default_bg_color: #34547a;
+$btn_default_text_color: $color_white;
+$btn_contrast_text_color: #000;
 $btn_default_bg_color_hover: #ccc;
 
 // Переменные для адаптации, почти не использую. Перешел на сниппет.

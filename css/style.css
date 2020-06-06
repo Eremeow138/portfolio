@@ -75,7 +75,9 @@
   box-sizing: border-box;
 }
 
-html, body, .wrapper {
+.wrapper,
+body,
+html {
   height: 100%;
   position: relative;
   box-sizing: content-box;
@@ -105,14 +107,25 @@ body {
   margin: 0;
   font-size: 100%;
   font-family: "Roboto";
-  color: #000;
+  color: #727272;
   line-height: 1.2;
 }
 
 /**
  * Add the correct display in IE 9-.
  */
-article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
   display: block;
 }
 
@@ -344,8 +357,7 @@ select {
  *    controls in Android 4.
  * 2. Correct the inability to style clickable types in iOS and Safari.
  */
-button,
-html [type=button],
+button, html [type=button],
 [type=reset],
 [type=submit] {
   -webkit-appearance: button;
@@ -355,10 +367,10 @@ html [type=button],
 /**
  * Remove the inner border and padding in Firefox.
  */
-button::-moz-focus-inner,
 [type=button]::-moz-focus-inner,
 [type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
+[type=submit]::-moz-focus-inner,
+button::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -366,10 +378,10 @@ button::-moz-focus-inner,
 /**
  * Restore the focus styles unset by the previous rule.
  */
-button:-moz-focusring,
 [type=button]:-moz-focusring,
 [type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
+[type=submit]:-moz-focusring,
+button:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -521,7 +533,7 @@ template {
 }
 
 .container_center {
-  max-width: 1200px;
+  max-width: 1185px;
   padding: 0 15px;
   margin-left: auto;
   margin-right: auto;
@@ -536,26 +548,20 @@ template {
 /* Набросок стилей для шапки
  ----------------------------------------------------------------------------- */
 .header {
-  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  padding: 57px 0;
 }
 .header__logo {
-  background-color: transparent;
   width: 96px;
-}
-.header__stiky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
 }
 .header__content {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  max-width: 1140px;
+  max-width: 1185px;
   margin: 0 auto;
-  padding: 57px 17px 0;
+  padding: 0 40px;
 }
 .header__left {
   padding-top: 8px;
@@ -574,11 +580,11 @@ template {
   margin: 0 21px;
 }
 .navbar__item:last-child {
-  margin-left: 21px;
-  margin-right: 9px;
+  margin-right: 8px;
 }
 .navbar__link {
-  font-weight: normal;
+  transition: all 0.3s;
+  font-weight: 400;
   font-size: 16px;
   line-height: 26px;
   letter-spacing: 0.1em;
@@ -588,7 +594,7 @@ template {
 }
 .navbar__link:hover {
   color: #34547A;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 /* Набросок стилей для подвала
@@ -603,6 +609,27 @@ template {
   padding-bottom: 10px;
 }
 
+.btn {
+  color: #ffffff;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  padding: 25px 41px 20px;
+  letter-spacing: 1.6px;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #34547a;
+  text-align: center;
+  max-width: 100%;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+.btn:hover {
+  background-color: #000;
+}
 @font-face {
   font-family: "portfolio_icons";
   src: url("../../fonts/portfolio_icons-v1.0/fonts/portfolio_icons.eot?1lix9n");
@@ -662,6 +689,33 @@ template {
   content: "";
 }
 
-body {
+.firstScreen {
+  min-height: 700px;
   background: #EEEFF1;
+  padding-top: 250px;
+}
+.firstScreen__content {
+  display: flex;
+}
+.firstScreen__left {
+  width: 100%;
+  margin-left: 104px;
+  padding-top: 21px;
+}
+.firstScreen__left img {
+  max-width: 100%;
+  display: block;
+}
+.firstScreen__right {
+  margin-left: -35px;
+}
+.firstScreen__title {
+  margin: 0 0 45px;
+  color: #000000;
+  font-size: 48px;
+  font-weight: 500;
+}
+.firstScreen__description {
+  line-height: 1.65;
+  margin: 0 0 52px;
 }

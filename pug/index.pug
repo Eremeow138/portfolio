@@ -1,5 +1,17 @@
 extends layout/layout.pug
 
 block content
-    .container_center
+    // begin firstScreen
+    section#firstScreen.firstScreen.section
+        .container_center
 
+            .firstScreen__content
+                .firstScreen__left
+                    img(src="img/laptop.svg", alt="")
+                .firstScreen__right
+                    h1.firstScreen__title Дизайн и верстка
+                    .firstScreen__description
+                        p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+                    button.btn(type="submit") НАПИСАТЬ МНЕ
+
+    // end firstScreen

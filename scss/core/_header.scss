@@ -1,34 +1,21 @@
 /* Набросок стилей для шапки
  ----------------------------------------------------------------------------- */
 .header {
-	background-color: transparent;
-	// padding: 10px 0;
-
+	position: absolute;
+	width: 100%;
+	padding: 57px 0;
 	// Обертка логотипа
 	&__logo {
-		background-color: transparent;
-		// float: left;
 		width: 96px;
-	}
-	// "Липкая" шапка
-	&__stiky {
-		// Позиционируем
-		position: fixed;
-		// Прибиваем вверх и влево
-		top: 0;
-		left: 0;
-		// Растягиваем на всю ширину
-		width: 100%;
 	}
 
 	&__content {
 		display: flex;
-		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
-		max-width: 1140px;
+		max-width: $container_width;
 		margin: 0 auto;
-		padding: 57px 17px 0;
+		padding: 0 40px;
 
 	}
 

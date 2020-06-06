@@ -31,9 +31,53 @@
 @import 'core/navbar';
 // Стили для подвала
 @import 'core/footer';
+@import 'core/button';
 
 @import 'fonts/_icon_fonts';
 
-body {
+body {}
+
+.main_content {}
+
+.firstScreen {
+    // margin-top: 105px;
+    min-height: 700px;
     background: #EEEFF1;
+    padding-top: 250px;
+
+    &__content {
+        display: flex;
+
+    }
+
+    &__left {
+        width: 100%;
+        margin-left: 104px;
+        padding-top: 21px;
+        // flex: none;
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+    }
+
+    &__right {
+        margin-left: -35px;
+    }
+
+    &__title {
+        margin: 0 0 45px;
+        color: #000000;
+        font-size: 48px;
+        font-weight: 500;
+    }
+
+    &__description {
+        line-height: 1.65;
+        margin: 0 0 52px;
+    }
+
 }
+
+.section {}
