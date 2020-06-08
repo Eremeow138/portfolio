@@ -81,4 +81,23 @@ body {}
 
 }
 
-.section {}
+.secondSection {
+    &__content {}
+
+    &__aboutMe {
+        line-height: 1.65;
+        text-align: center;
+    }
+
+}
+
+.section {
+    &__title {
+        color: #000000;
+        font-size: 32px;
+        font-weight: 500;
+    }
+
+}
+
+.container_center {}
