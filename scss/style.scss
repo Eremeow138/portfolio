@@ -47,23 +47,24 @@ body {}
 
     &__content {
         display: flex;
-
+        justify-content: flex-start;
     }
 
     &__left {
-        width: 100%;
-        margin-left: 104px;
         padding-top: 21px;
-        // flex: none;
+        margin-left: 105px;
+        padding-right: 130px;
+        // width: 50%;
 
         img {
             max-width: 100%;
             display: block;
+
         }
     }
 
     &__right {
-        margin-left: -35px;
+        max-width: 44.2%;
     }
 
     &__title {

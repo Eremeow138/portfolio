@@ -696,18 +696,19 @@ template {
 }
 .firstScreen__content {
   display: flex;
+  justify-content: flex-start;
 }
 .firstScreen__left {
-  width: 100%;
-  margin-left: 104px;
   padding-top: 21px;
+  margin-left: 105px;
+  padding-right: 130px;
 }
 .firstScreen__left img {
   max-width: 100%;
   display: block;
 }
 .firstScreen__right {
-  margin-left: -35px;
+  max-width: 44.2%;
 }
 .firstScreen__title {
   margin: 0 0 45px;
