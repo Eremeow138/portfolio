@@ -55,28 +55,23 @@ body {}
     }
 
     &__left {
-        // padding-top: 21px;
-        // margin-left: 105px;
-        // padding-right: 130px;
-        // max-width: 520px;
+
         width: 50%;
-        // margin-left: -6px;
-        // margin-top: -16px;
+
         padding-right: 12px;
         padding-bottom: 19px;
         display: flex;
         justify-content: center;
 
         img {
-            // max-width: 100%;
-            // max-width: 357px;
+
             display: block;
 
         }
     }
 
     &__right {
-        // max-width: 520px;
+
         padding: 0 15px;
         width: 50%;
 
@@ -98,9 +93,6 @@ body {}
 }
 
 .secondSection {
-    // margin-top: 117px;
-    // min-height: 693px;
-
     &__content {
         padding: 92px 0 73px;
         display: flex;
