@@ -175,23 +175,34 @@ body {}
     }
 
     &__left {
-        width: 39%;
+        width: 50%;
+
+    }
+
+    &__skillBox {
+        max-width: 445px;
+        margin-left: 5px;
     }
 
     &__skillList {
         display: flex;
         flex-direction: column;
-        margin-top: 39px;
+        margin-top: 38px;
 
     }
 
     &__item {
+        border: 1px solid #000;
         border-bottom: 4px solid #c4c4c4;
         padding-bottom: 15px;
-        margin-bottom: 29px;
+        margin-bottom: 28px;
 
     }
 
-    &__right {}
+    &__right {
+        width: 50%;
+    }
+
+    &__image {}
 
 }

@@ -773,15 +773,23 @@ template {
   align-items: center;
 }
 .fourthSection__left {
-  width: 39%;
+  width: 50%;
+}
+.fourthSection__skillBox {
+  max-width: 445px;
+  margin-left: 5px;
 }
 .fourthSection__skillList {
   display: flex;
   flex-direction: column;
-  margin-top: 39px;
+  margin-top: 38px;
 }
 .fourthSection__item {
+  border: 1px solid #000;
   border-bottom: 4px solid #c4c4c4;
   padding-bottom: 15px;
-  margin-bottom: 29px;
+  margin-bottom: 28px;
+}
+.fourthSection__right {
+  width: 50%;
 }
