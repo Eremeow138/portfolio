@@ -700,8 +700,8 @@ template {
 }
 .firstScreen__left {
   width: 50%;
-  margin-left: -6px;
-  margin-top: -16px;
+  padding-right: 12px;
+  padding-bottom: 19px;
   display: flex;
   justify-content: center;
 }
@@ -709,7 +709,7 @@ template {
   display: block;
 }
 .firstScreen__right {
-  padding: 0 19px;
+  padding: 0 15px;
   width: 50%;
 }
 .firstScreen__title {
