@@ -7,6 +7,9 @@
 	// Обертка логотипа
 	&__logo {
 		width: 96px;
+		@media (max-width: 767px) {
+			margin-left: 25px;
+		}
 	}
 
 	&__content {
