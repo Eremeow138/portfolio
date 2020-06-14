@@ -632,8 +632,8 @@ template {
 }
 @font-face {
   font-family: "portfolio_icons";
-  src: url("../../fonts/portfolio_icons-v1.0/fonts/portfolio_icons.eot?1lix9n");
-  src: url("../../fonts/portfolio_icons-v1.0/fonts/portfolio_icons.eot?1lix9n#iefix") format("embedded-opentype"), url("../../fonts/portfolio_icons-v1.0/fonts/portfolio_icons.ttf?1lix9n") format("truetype"), url("../../fonts/portfolio_icons-v1.0/fonts/portfolio_icons.woff?1lix9n") format("woff"), url("../../fonts/portfolio_icons-v1.0/fonts/portfolio_icons.svg?1lix9n#portfolio_icons") format("svg");
+  src: url("../fonts/portfolio_icons-v1.0/fonts/portfolio_icons.eot?1lix9n");
+  src: url("../fonts/portfolio_icons-v1.0/fonts/portfolio_icons.eot?1lix9n#iefix") format("embedded-opentype"), url("../fonts/portfolio_icons-v1.0/fonts/portfolio_icons.ttf?1lix9n") format("truetype"), url("../fonts/portfolio_icons-v1.0/fonts/portfolio_icons.woff?1lix9n") format("woff"), url("../fonts/portfolio_icons-v1.0/fonts/portfolio_icons.svg?1lix9n#portfolio_icons") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -690,24 +690,27 @@ template {
 }
 
 .firstScreen {
-  min-height: 700px;
+  min-height: 693px;
   background: #EEEFF1;
   padding-top: 250px;
 }
 .firstScreen__content {
   display: flex;
+  align-items: center;
 }
 .firstScreen__left {
-  width: 100%;
-  margin-left: 104px;
-  padding-top: 21px;
+  width: 50%;
+  padding-right: 12px;
+  padding-bottom: 19px;
+  display: flex;
+  justify-content: center;
 }
 .firstScreen__left img {
-  max-width: 100%;
   display: block;
 }
 .firstScreen__right {
-  margin-left: -35px;
+  padding: 0 15px;
+  width: 50%;
 }
 .firstScreen__title {
   margin: 0 0 45px;
@@ -718,4 +721,77 @@ template {
 .firstScreen__description {
   line-height: 1.65;
   margin: 0 0 52px;
+}
+
+.secondSection__content {
+  padding: 92px 0 73px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.secondSection__aboutMe {
+  line-height: 1.65;
+  text-align: center;
+  max-width: 540px;
+  padding: 0 16px;
+}
+
+.section__title {
+  color: #000000;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+}
+.section__title_left {
+  text-align: left;
+}
+
+.thirdSection {
+  background-color: #34547a;
+}
+.thirdSection__content {
+  color: #fff;
+  padding: 99px 21px 91px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.thirdSection__item {
+  display: flex;
+}
+.thirdSection__image {
+  font-size: 50px;
+  margin-right: 20px;
+}
+.thirdSection__number {
+  font-size: 21px;
+  padding: 3px 0;
+}
+.fourthSection__content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 102px;
+  align-items: center;
+}
+.fourthSection__left {
+  width: 50%;
+}
+.fourthSection__skillBox {
+  max-width: 445px;
+  margin-left: 5px;
+}
+.fourthSection__skillList {
+  display: flex;
+  flex-direction: column;
+  margin-top: 38px;
+}
+.fourthSection__item {
+  border: 1px solid #000;
+  border-bottom: 4px solid #c4c4c4;
+  padding-bottom: 15px;
+  margin-bottom: 28px;
+}
+.fourthSection__right {
+  width: 50%;
 }
