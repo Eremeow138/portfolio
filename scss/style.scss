@@ -176,16 +176,28 @@ body {}
 
 .icon_project {}
 
+.progress {
+    height: 4px;
+    background-color: #c4c4c4;
+
+    &__bar {
+        height: 4px;
+        background-color: #34547a;
+    }
+}
+
 .fourthSection {
     &__content {
         display: flex;
         justify-content: space-between;
         margin-top: 102px;
-        align-items: center;
+
+        // align-items: center;
 
     }
 
     &__left {
+
         width: 50%;
 
     }
@@ -193,25 +205,49 @@ body {}
     &__skillBox {
         max-width: 445px;
         margin-left: 5px;
+        padding-top: 74px;
     }
 
     &__skillList {
         display: flex;
         flex-direction: column;
-        margin-top: 38px;
+        margin-top: 44px;
 
     }
 
+    &__skillName {
+        margin-bottom: 15px;
+    }
+
     &__item {
-        border: 1px solid #000;
-        border-bottom: 4px solid #c4c4c4;
-        padding-bottom: 15px;
-        margin-bottom: 28px;
+        // border: 1px solid #000;
+        // border-bottom: 4px solid #c4c4c4;
+        padding-bottom: 0;
+        margin-bottom: 31px;
+        position: relative;
+
+        // &:before {
+        //     content: '';
+        //     position: absolute;
+        //     border-bottom: 4px solid #34547a;
+        //     padding-top: 34px;
+        //     width: 10%;
+        //
+        // }
+        //
+        // &:nth-child(1):before {
+        //     width: 50%;
+        // }
+        //
+        // &:nth-child(3):before {
+        //     width: 40%;
+        // }
 
     }
 
     &__right {
         width: 50%;
+        padding-left: 20px;
     }
 
     &__image {}
