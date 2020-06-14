@@ -3,7 +3,10 @@ header.header
         .header__left
             a.header__logo(href="/")
                 img(src="img/logo.svg", alt="alt")
+
         nav.header__right
+            input.navbar__swicher#navbar_toggle(type="checkbox")
+            label(for="navbar_toggle").navbar__toggle
             ul.navbar
                 li.navbar__item
                     a.navbar__link(href=baseDir+"#") Главная
