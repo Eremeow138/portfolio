@@ -3,24 +3,33 @@
 .header {
 	position: absolute;
 	width: 100%;
-	padding: 57px 0;
+	padding: 27px 0;
+	@media (min-width: 768px) {
+		padding: 57px 0;
+	}
 	// Обертка логотипа
 	&__logo {
 		width: 96px;
+
 	}
 
 	&__content {
 		display: flex;
+		justify-content: center;
 		align-items: center;
-		justify-content: space-between;
 		max-width: $container_width;
 		margin: 0 auto;
 		padding: 0 40px;
+		@media (min-width: 768px) {
+			// margin-left: 50%;
+			justify-content: space-between;
+		}
 
 	}
 
 	&__left {
 		padding-top: 8px;
+
 	}
 
 	// &__right {
