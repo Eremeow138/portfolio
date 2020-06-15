@@ -876,9 +876,15 @@ ul {
   padding: 76px 21px 68px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin-left: -24px;
   align-items: center;
+  justify-content: center;
+  margin-left: 0;
+}
+@media (min-width: 1200px) {
+  .thirdSection__content {
+    justify-content: space-between;
+    margin-left: -24px;
+  }
 }
 .thirdSection__item {
   display: flex;
