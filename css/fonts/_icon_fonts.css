@@ -1,8 +1,8 @@
 @charset "UTF-8";
 @font-face {
   font-family: "portfolio_icons";
-  src: url("../fonts/portfolio_icons-v1.0/fonts/portfolio_icons.eot?1lix9n");
-  src: url("../fonts/portfolio_icons-v1.0/fonts/portfolio_icons.eot?1lix9n#iefix") format("embedded-opentype"), url("../fonts/portfolio_icons-v1.0/fonts/portfolio_icons.ttf?1lix9n") format("truetype"), url("../fonts/portfolio_icons-v1.0/fonts/portfolio_icons.woff?1lix9n") format("woff"), url("../fonts/portfolio_icons-v1.0/fonts/portfolio_icons.svg?1lix9n#portfolio_icons") format("svg");
+  src: url("../fonts/portfolio_icons-v1.1/fonts/portfolio_icons.eot?hig3vw");
+  src: url("../fonts/portfolio_icons-v1.1/fonts/portfolio_icons.eot?hig3vw#iefix") format("embedded-opentype"), url("../fonts/portfolio_icons-v1.1/fonts/portfolio_icons.ttf?hig3vw") format("truetype"), url("../fonts/portfolio_icons-v1.1/fonts/portfolio_icons.woff?hig3vw") format("woff"), url("../fonts/portfolio_icons-v1.1/fonts/portfolio_icons.svg?hig3vw#portfolio_icons") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -11,7 +11,7 @@
 [class*=" icon_"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: "portfolio_icons" !important;
-  speak: none;
+  speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -22,12 +22,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon_telegram:before {
-  content: "";
-}
-
-.icon_instagram:before {
-  content: "";
+.icon_eye:before {
+  content: "";
 }
 
 .icon_network:before {
@@ -56,4 +52,12 @@
 
 .icon_vk:before {
   content: "";
+}
+
+.icon_telegram:before {
+  content: "";
+}
+
+.icon_instagram:before {
+  content: "";
 }
