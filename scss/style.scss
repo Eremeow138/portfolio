@@ -391,12 +391,26 @@ body {}
         .sixthSection__plate:hover & {
             opacity: 1;
         }
-        // @media (max-width: 1199px) {
-        //     font-size: 39px;
-        // }
-        // @media (max-width: 768px) {
-        //     font-size: 16px;
-        // }
+
+    }
+
+}
+
+.seventhSection {
+    // background-color: red;
+    padding-bottom: 24px;
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 83px 0;
+
+    }
+
+    &__item {
+        padding: 25px 20px;
+        // width: 20%;
     }
 
 }

@@ -1062,3 +1062,16 @@ ul {
 .sixthSection__plate:hover .sixthSection__select {
   opacity: 1;
 }
+
+.seventhSection {
+  padding-bottom: 24px;
+}
+.seventhSection__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 83px 0;
+}
+.seventhSection__item {
+  padding: 25px 20px;
+}
