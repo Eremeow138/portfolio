@@ -397,7 +397,6 @@ body {}
 }
 
 .seventhSection {
-    // background-color: red;
     padding-bottom: 24px;
 
     &__content {
@@ -410,7 +409,74 @@ body {}
 
     &__item {
         padding: 25px 20px;
-        // width: 20%;
     }
 
+}
+
+.ninthSection {
+    background-color: #EEEFF1;
+
+    &__formBox {
+
+        // border: 1px solid #000;
+        max-width: 540px;
+        margin: auto;
+        padding-top: 71px;
+        padding-bottom: 71px;
+    }
+
+    &__grid {
+        // border: 1px solid red;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 28px -15px;
+        justify-content: center;
+
+    }
+
+    &__row {
+
+        width: calc(50% - 30px);
+        // width: 50%;
+        margin: 10px 15px;
+
+        &_full {
+            width: 100%;
+        }
+
+        textarea {
+            min-height: 175px;
+            resize: none;
+            margin-bottom: 35px;
+        }
+    }
+    @include formField {
+        width: 100%;
+        background: #fff;
+        padding: 17px 20px 16px;
+        border: 1px solid #fff;
+        outline: none;
+        font-size: 14px;
+        font-family: $main_font_family;
+        transition: all 0.3s;
+
+        &:hover {
+            border: 1px solid #ddd;
+            background-color: $color_white;
+        }
+
+        &:focus {
+            border: 1px solid #ddd;
+            background-color: $color_white;
+        }
+
+        &.invalid {
+            background-color: #fff0f0;
+            border: 1px solid red;
+        }
+        @include placeholder {
+            color: #5f5d5d;
+        }
+
+    }
 }
