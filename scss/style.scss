@@ -413,7 +413,7 @@ body {}
 
 }
 
-.ninthSection {
+.eightSection {
     background-color: #EEEFF1;
 
     &__formBox {
@@ -436,7 +436,10 @@ body {}
 
     &__row {
 
-        width: calc(50% - 30px);
+        width: 100%;
+        @media (min-width: 768px) {
+            width: calc(50% - 30px);
+        }
         // width: 50%;
         margin: 10px 15px;
 
