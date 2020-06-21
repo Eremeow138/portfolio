@@ -537,7 +537,7 @@ ul {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -100px auto;
+  margin: 0 auto -auto auto;
 }
 
 .container_center {
@@ -550,7 +550,7 @@ ul {
 /* Middle
  ----------------------------------------------------------------------------- */
 .main__content {
-  padding-bottom: 100px;
+  padding-bottom: auto;
 }
 
 /* Набросок стилей для шапки
@@ -694,8 +694,8 @@ ul {
  ----------------------------------------------------------------------------- */
 .footer {
   position: relative;
-  height: 100px;
-  background: #BFF08E;
+  height: auto;
+  background: #34547A;
 }
 .footer .container_center {
   padding-top: 10px;
