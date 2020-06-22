@@ -532,6 +532,10 @@ ul {
   margin: 0;
 }
 
+p {
+  margin: 0;
+}
+
 .wrapper {
   font-size: 16px;
   min-height: 100%;
@@ -710,6 +714,7 @@ ul {
 .footer__name {
   font-weight: 500;
   font-size: 21px;
+  margin-bottom: 15px;
 }
 .footer__rights {
   font-size: 13px;
@@ -718,11 +723,13 @@ ul {
   margin-top: 7px;
   font-size: 39px;
 }
-.footer__social .icon_vk {
-  padding: 0 11px;
+.footer__link {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 11px;
 }
-.footer__social .icon_vk:last-child {
-  padding: 0 0 0 11px;
+.footer__link:last-child {
+  margin: 0 0 0 11px;
 }
 .footer .container_center {
   padding-top: 10px;
