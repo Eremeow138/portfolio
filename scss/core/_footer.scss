@@ -5,6 +5,41 @@
 	height: $footer_height;
 	background: #34547A;
 	@extend %clear_all;
+	color: #fff;
+
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 41px 7px;
+
+	}
+
+	&__developer {
+		margin-left: 17px;
+	}
+
+	&__name {
+		font-weight: 500;
+		font-size: 21px;
+	}
+
+	&__rights {
+		font-size: 13px;
+	}
+
+	&__social {
+		margin-top: 7px;
+		font-size: 39px;
+
+		.icon_vk {
+			padding: 0 11px;
+
+			&:last-child {
+				padding: 0 0 0 11px;
+			}
+		}
+	}
 
 	.container_center {
 		padding-top: 10px;

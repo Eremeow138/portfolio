@@ -696,6 +696,33 @@ ul {
   position: relative;
   height: auto;
   background: #34547A;
+  color: #fff;
+}
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 41px 7px;
+}
+.footer__developer {
+  margin-left: 17px;
+}
+.footer__name {
+  font-weight: 500;
+  font-size: 21px;
+}
+.footer__rights {
+  font-size: 13px;
+}
+.footer__social {
+  margin-top: 7px;
+  font-size: 39px;
+}
+.footer__social .icon_vk {
+  padding: 0 11px;
+}
+.footer__social .icon_vk:last-child {
+  padding: 0 0 0 11px;
 }
 .footer .container_center {
   padding-top: 10px;
@@ -876,6 +903,7 @@ ul {
   text-align: center;
   max-width: 540px;
   padding: 0 16px;
+  margin: 16px 0;
 }
 
 .section__title {
