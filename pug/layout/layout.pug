@@ -1,6 +1,6 @@
 //- -var version = '0.1';
 block variables
-    //- - var baseDir = "/portfolio/";
+    - var baseDir = "/portfolio/";
     - var baseDir = "/";
     - var pageTitle = "Portfolio";
 
@@ -14,10 +14,12 @@ html(lang="en")
 
         link(rel="stylesheet", type="text/css", href=baseDir+"css/style.css")
     body
+        .wrapper
+            include header.pug 
 
-        include header.pug 
+            main.main__content
+                block content
 
-        main.main_content
-            block content
-
-        //- include footer.pug
+        include footer.pug
+script(src="js/jquery.js")
+script(src="js/script.js")

@@ -20,9 +20,12 @@ block content
     section#secondSection.secondSection.section
         .container_center
             .secondSection__content
-                h2.section__title Обо мне
-                .secondSection__aboutMe 
-                    p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+                .clause
+                    h2.section__title Обо мне
+                    .clause__description Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+                //- h2.section__title Обо мне
+                //- .secondSection__aboutMe 
+                //-     p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
 
     // end secondSection
     // begin thirdSection
@@ -94,3 +97,58 @@ block content
                         img(src="img/my_photo.jpg", alt="")
 
     // end fourthSection
+    // begin fifthSection
+    section#fifthSection.fifthSection.section
+        .container_center
+            .fifthSection__content
+                .clause
+                    h2.section__title Как я работаю
+                    .clause__description Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+                .video
+                    #7Nn7NZI_LN4.video__wrapper.js_youtube 
+                        img(src="img/prev_video.jpg", alt="").video__prev
+
+
+
+    // end fifthSection
+    // begin sixthSection
+    section#sixthSection.sixthSection.section
+        .sixthSection__content
+            each item in [1, 2, 1, 2, 2, 1, 2, 1]
+                .sixthSection__item
+                    a.sixthSection__plate(href="/" style="background-image: url('img/job-"+item+".jpg')")
+                        .sixthSection__select
+                            i.icon_eye
+
+    // end sixthSection
+    // begin seventhSection
+    section#seventhSection.seventhSection.section
+        .container_center
+            .seventhSection__content
+                .seventhSection__item
+                    img(src="img/microsoft.svg", alt="")
+                .seventhSection__item
+                    img(src="img/microsoft.svg", alt="")
+                .seventhSection__item
+                    img(src="img/microsoft.svg", alt="")
+                .seventhSection__item
+                    img(src="img/microsoft.svg", alt="")
+
+    // end seventhSection
+    // begin eightSection
+    section#eightSection.eightSection.section
+        .container_center
+            .eightSection__formBox
+                .clause
+                    h2.section__title Хотите веб-сайт?
+                    .clause__description Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+                form.eightSection__grid(action="")
+                    .eightSection__row
+                        input(type="text", placeholder="Ваше имя")
+                    .eightSection__row
+                        input(type="text", placeholder="Ваш e-mail", required)
+                    .eightSection__row.eightSection__row_full
+                        textarea(type="text", placeholder="Сообщение")
+                    button.btn.btn_form(type="submit") Отправить
+
+    // end eightSection

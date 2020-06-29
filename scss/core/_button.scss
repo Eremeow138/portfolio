@@ -14,12 +14,20 @@
     max-width: 100%;
     cursor: pointer;
     transition: all 0.3s;
-    text-decoration: none;
+    text-transform: uppercase;
 
     &:hover {
         background-color: #000;
     }
 
-    &_small {}
+    &:active {
+        background-color: darken($btn_default_bg_color, 10%);
+    }
+
+    &_form {
+        font-size: 14px;
+        letter-spacing: 2.1px;
+        padding: 20px 46px 18px;
+    }
 
 }

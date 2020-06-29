@@ -1,8 +1,20 @@
-$icomoon-font-family: "portfolio_icons" !default;
-$icomoon-font-path: "../fonts/portfolio_icons-v1.0/fonts" !default;
+// $icomoon-font-family: "portfolio_icons" !default;
+// $icomoon-font-path: "../fonts/portfolio_icons-v1.0/fonts" !default;
+//
+// $icon_telegram: "\e900";
+// $icon_instagram: "\e901";
+// $icon_network: "\e902";
+// $icon_pin: "\e903";
+// $icon_target: "\e904";
+// $icon_policy: "\e905";
+// $icon_offer: "\e906";
+// $icon_project: "\e907";
+// $icon_vk: "\e908";
 
-$icon_telegram: "\e900";
-$icon_instagram: "\e901";
+$icomoon-font-family: "portfolio_icons" !default;
+$icomoon-font-path: "../fonts/portfolio_icons-v1.1/fonts" !default;
+
+$icon_eye: "\e909";
 $icon_network: "\e902";
 $icon_pin: "\e903";
 $icon_target: "\e904";
@@ -10,11 +22,13 @@ $icon_policy: "\e905";
 $icon_offer: "\e906";
 $icon_project: "\e907";
 $icon_vk: "\e908";
+$icon_telegram: "\e900";
+$icon_instagram: "\e901";
 
 @font-face {
     font-family: '#{$icomoon-font-family}';
-    src: url("#{$icomoon-font-path}/#{$icomoon-font-family}.eot?1lix9n");
-    src: url("#{$icomoon-font-path}/#{$icomoon-font-family}.eot?1lix9n#iefix") format('embedded-opentype'), url("#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?1lix9n") format('truetype'), url("#{$icomoon-font-path}/#{$icomoon-font-family}.woff?1lix9n") format('woff'), url("#{$icomoon-font-path}/#{$icomoon-font-family}.svg?1lix9n##{$icomoon-font-family}") format('svg');
+    src: url("#{$icomoon-font-path}/#{$icomoon-font-family}.eot?hig3vw");
+    src: url("#{$icomoon-font-path}/#{$icomoon-font-family}.eot?hig3vw#iefix") format('embedded-opentype'), url("#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?hig3vw") format('truetype'), url("#{$icomoon-font-path}/#{$icomoon-font-family}.woff?hig3vw") format('woff'), url("#{$icomoon-font-path}/#{$icomoon-font-family}.svg?hig3vw##{$icomoon-font-family}") format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -24,7 +38,7 @@ $icon_vk: "\e908";
 [class*=" icon_"] {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: '#{$icomoon-font-family}' !important;
-    speak: none;
+    speak: never;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -36,15 +50,9 @@ $icon_vk: "\e908";
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon_telegram {
+.icon_eye {
     &:before {
-        content: $icon_telegram;
-    }
-}
-
-.icon_instagram {
-    &:before {
-        content: $icon_instagram;
+        content: $icon_eye;
     }
 }
 
@@ -89,3 +97,94 @@ $icon_vk: "\e908";
         content: $icon_vk;
     }
 }
+
+.icon_telegram {
+    &:before {
+        content: $icon_telegram;
+    }
+}
+
+.icon_instagram {
+    &:before {
+        content: $icon_instagram;
+    }
+}
+
+// @font-face {
+//     font-family: '#{$icomoon-font-family}';
+//     src: url("#{$icomoon-font-path}/#{$icomoon-font-family}.eot?1lix9n");
+//     src: url("#{$icomoon-font-path}/#{$icomoon-font-family}.eot?1lix9n#iefix") format('embedded-opentype'), url("#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?1lix9n") format('truetype'), url("#{$icomoon-font-path}/#{$icomoon-font-family}.woff?1lix9n") format('woff'), url("#{$icomoon-font-path}/#{$icomoon-font-family}.svg?1lix9n##{$icomoon-font-family}") format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+//     font-display: block;
+// }
+//
+// [class^="icon_"],
+// [class*=" icon_"] {
+//     /* use !important to prevent issues with browser extensions that change fonts */
+//     font-family: '#{$icomoon-font-family}' !important;
+//     speak: none;
+//     font-style: normal;
+//     font-weight: normal;
+//     font-variant: normal;
+//     text-transform: none;
+//     line-height: 1;
+//
+//     /* Better Font Rendering =========== */
+//     -webkit-font-smoothing: antialiased;
+//     -moz-osx-font-smoothing: grayscale;
+// }
+//
+// .icon_telegram {
+//     &:before {
+//         content: $icon_telegram;
+//     }
+// }
+//
+// .icon_instagram {
+//     &:before {
+//         content: $icon_instagram;
+//     }
+// }
+//
+// .icon_network {
+//     &:before {
+//         content: $icon_network;
+//     }
+// }
+//
+// .icon_pin {
+//     &:before {
+//         content: $icon_pin;
+//     }
+// }
+//
+// .icon_target {
+//     &:before {
+//         content: $icon_target;
+//     }
+// }
+//
+// .icon_policy {
+//     &:before {
+//         content: $icon_policy;
+//     }
+// }
+//
+// .icon_offer {
+//     &:before {
+//         content: $icon_offer;
+//     }
+// }
+//
+// .icon_project {
+//     &:before {
+//         content: $icon_project;
+//     }
+// }
+//
+// .icon_vk {
+//     &:before {
+//         content: $icon_vk;
+//     }
+// }
