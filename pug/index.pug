@@ -12,8 +12,8 @@ block content
                     h1.firstScreen__title Дизайн и верстка
                     .firstScreen__description
                         p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
-
-                    button.btn(type="submit") НАПИСАТЬ МНЕ
+                    a(href="#eightSection")
+                        button.btn(type="button") НАПИСАТЬ МНЕ
 
     // end firstScreen
     // begin secondSection
@@ -142,13 +142,24 @@ block content
                 .clause
                     h2.section__title Хотите веб-сайт?
                     .clause__description Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
-                form.eightSection__grid(action="")
+                form.eightSection__grid(action="mail.php" method="POST")
                     .eightSection__row
-                        input(type="text", placeholder="Ваше имя")
+                        input(type="text", name="name", placeholder="Ваше имя", required)
                     .eightSection__row
-                        input(type="text", placeholder="Ваш e-mail", required)
+                        input(type="text", name="email", placeholder="Ваш e-mail", required)
                     .eightSection__row.eightSection__row_full
-                        textarea(type="text", placeholder="Сообщение")
+                        textarea(type="text", name="message", placeholder="Сообщение")
                     button.btn.btn_form(type="submit") Отправить
 
     // end eightSection
+
+    // Begin Modal info
+    .modal.modal-sm.fade.info#info
+        .modal-dialog
+            .modal-content
+                a(href="#" class="modal-close" data-dismiss="modal")
+
+                .form__message
+
+
+    // End modal info

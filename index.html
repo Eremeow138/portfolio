@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Portfolio</title>
-    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
   </head>
   <body>
     <div class="wrapper">
@@ -16,11 +16,11 @@
             <input class="navbar__swicher" id="navbar_toggle" type="checkbox"/>
             <label class="navbar__toggle" for="navbar_toggle"></label>
             <ul class="navbar">
-              <li class="navbar__item"><a class="navbar__link" href="/#firstScreen">Главная</a></li>
-              <li class="navbar__item"><a class="navbar__link" href="/#secondSection">Об авторе</a></li>
-              <li class="navbar__item"><a class="navbar__link" href="/#sixthSection">Работы</a></li>
-              <li class="navbar__item"><a class="navbar__link" href="/#fifthSection">Процесс</a></li>
-              <li class="navbar__item"><a class="navbar__link" href="/#eightSection">Контакты</a></li>
+              <li class="navbar__item"><a class="navbar__link" href="#firstScreen">Главная</a></li>
+              <li class="navbar__item"><a class="navbar__link" href="#secondSection">Об авторе</a></li>
+              <li class="navbar__item"><a class="navbar__link" href="#sixthSection">Работы</a></li>
+              <li class="navbar__item"><a class="navbar__link" href="#fifthSection">Процесс</a></li>
+              <li class="navbar__item"><a class="navbar__link" href="#eightSection">Контакты</a></li>
             </ul>
           </nav>
         </div>
@@ -35,8 +35,8 @@
                 <h1 class="firstScreen__title">Дизайн и верстка</h1>
                 <div class="firstScreen__description">
                   <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</p>
-                </div>
-                <button class="btn" type="submit">НАПИСАТЬ МНЕ</button>
+                </div><a href="#eightSection">
+                  <button class="btn" type="button">НАПИСАТЬ МНЕ</button></a>
               </div>
             </div>
           </div>
@@ -197,15 +197,15 @@
                 <h2 class="section__title">Хотите веб-сайт?</h2>
                 <div class="clause__description">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</div>
               </div>
-              <form class="eightSection__grid" action="">
+              <form class="eightSection__grid" action="mail.php" method="POST">
                 <div class="eightSection__row">
-                  <input type="text" placeholder="Ваше имя"/>
+                  <input type="text" name="name" placeholder="Ваше имя" required="required"/>
                 </div>
                 <div class="eightSection__row">
-                  <input type="text" placeholder="Ваш e-mail" required="required"/>
+                  <input type="text" name="email" placeholder="Ваш e-mail" required="required"/>
                 </div>
                 <div class="eightSection__row eightSection__row_full">
-                  <textarea type="text" placeholder="Сообщение"></textarea>
+                  <textarea type="text" name="message" placeholder="Сообщение"></textarea>
                 </div>
                 <button class="btn btn_form" type="submit">Отправить</button>
               </form>
@@ -213,6 +213,15 @@
           </div>
         </section>
         <!-- end eightSection-->
+        <!-- Begin Modal info-->
+        <div class="modal modal-sm fade info" id="info">
+          <div class="modal-dialog">
+            <div class="modal-content"><a class="modal-close" href="#" data-dismiss="modal"></a>
+              <div class="form__message"></div>
+            </div>
+          </div>
+        </div>
+        <!-- End modal info-->
       </main>
     </div>
     <footer class="footer">
@@ -231,4 +240,5 @@
   </body>
 </html>
 <script src="js/jquery.js"></script>
+<script src="js/modal.js"></script>
 <script src="js/script.js"></script>
