@@ -58,6 +58,8 @@ function submitForm() {
         e.preventDefault();
         // Можно отменить работу отельных библиотек и скриптов.
         // e.stopPropagination();
+        console.log('push');
+
 
         // Можно почитать что входит в стандартный аргумент event срабатывающий при событии
         // console.log(e);
@@ -74,6 +76,8 @@ function submitForm() {
             empty = 0;
         // console.log(fields);
         console.log(form);
+
+
         // console.log(url);
         console.log(formData);
 
@@ -94,9 +98,11 @@ function submitForm() {
         console.log(empty);
 
         if (empty > 0) {
+            // hideLoader($('.eightSection'));
             // Если пустых полей больше 1, останавливаем работу скрипта
             return false;
         } else {
+            showLoader($('.eightSection'));
             // Если пустых полей нет, отправляем форму
             // Либо стандартым методом с перезагрузкой страницы
             // form.submit();
@@ -122,7 +128,7 @@ function submitForm() {
 
                     // Пример вывода текста в какой то блок
                     message.html('Ваша форма успешно отправлена. <br> Мы свяжемся с вами в ближайшее время.');
-
+                    hideLoader($('.eightSection'));
                     // Дополнительно можно удалить текст из блока спустя какое то время
                     // setTimeout(function () {
                         //     message.html('');
@@ -138,7 +144,7 @@ function submitForm() {
                     modal.modal('show');
 
                     message.html('Произошла ошибка при отправке. <br> Попробуйте отправить форму позже.');
-
+                    hideLoader($('.eightSection'));
                     // setTimeout(function () {
                         //     message.html('');
                         // }, 5000);
@@ -179,3 +185,31 @@ $('a[href^="#"]').click( function(e){
 	}
 	return false;
 });
+
+
+// Показать лоадер при загрузке товаров
+function showLoader(el) {
+    // el.addClass('loaded');
+    // el.append('<div class="loader" />');
+    // console.log('show is run');
+    el.addClass('loadingio-spinner-blocks-a76og8p27y7');
+    el.append(`<div class="ldio-pef4zo238oc">
+        <div style='left:38px;top:38px;animation-delay:0s'></div>
+        <div style='left:80px;top:38px;animation-delay:0.125s'></div>
+        <div style='left:122px;top:38px;animation-delay:0.25s'></div>
+        <div style='left:38px;top:80px;animation-delay:0.875s'></div>
+        <div style='left:122px;top:80px;animation-delay:0.375s'></div>
+        <div style='left:38px;top:122px;animation-delay:0.75s'></div>
+        <div style='left:80px;top:122px;animation-delay:0.625s'></div>
+        <div style='left:122px;top:122px;animation-delay:0.5s'></div>
+    </div>`);
+}
+
+// Скрыть лоадер при загрузке товаров
+function hideLoader(el, time = 10) {
+    console.log('hide is run');
+    setTimeout(function () {
+        el.removeClass('loadingio-spinner-blocks-a76og8p27y7');
+        $('.ldio-pef4zo238oc').remove();
+    }, time);
+}

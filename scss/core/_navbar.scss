@@ -14,7 +14,6 @@
 		width: auto;
 	}
 	position: fixed;
-	// left: 0;
 	left: -330px;
 	top: 0;
 	bottom: 0;
@@ -22,7 +21,7 @@
 	padding-top: 80px;
 	transition: left 0.5s;
 
-	background-color: $color_white;
+	background-color: #fff;
 	box-shadow: 0 2px 10px rgba(#000, .5);
 	z-index: 10;
 
@@ -115,7 +114,6 @@
 
 		&:hover {
 			color: #34547A;
-			font-weight: 500;
 		}
 	}
 }
