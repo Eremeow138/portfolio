@@ -5,30 +5,67 @@
 	width: 100%;
 	padding: 27px 0;
 	@media (min-width: 768px) {
+		// padding: 21px 0 57px;
 		padding: 57px 0;
 	}
 	// Обертка логотипа
 	&__logo {
-		width: 96px;
+		// width: 96px;
+		text-decoration: none;
+		color: #34547a;
+		font-size: 41px;
+		text-transform: uppercase;
+		font-weight: bold;
 
+		@media (min-width: 768px) {
+			// font-size: 19px;
+			position: absolute;
+			left: 32px;
+			top: 148px;
+		}
+		@media (min-width: 992px) {
+			// font-size: 19px;
+			position: initial;
+		}
+
+		&:hover {
+			color: #000;
+		}
 	}
 
 	&__content {
 		display: flex;
-		justify-content: center;
+		justify-content: flex-end;
 		align-items: center;
-		max-width: $container_width;
+		max-width: 1185px;
 		margin: 0 auto;
-		padding: 0 40px;
+		padding: 0 15px;
 		@media (min-width: 768px) {
+			padding: 0 40px;
+
+		}
+		@media (min-width: 992px) {
 			justify-content: space-between;
+
 		}
 
 	}
 
 	&__left {
-		padding-top: 8px;
+		// padding-top: 8px;
 
+	}
+
+	&__right {
+
+		@media (min-width: 768px) {
+			width: 100%;
+
+		}
+		@media (min-width: 992px) {
+			width: auto;
+
+		}
 	}
 
 }

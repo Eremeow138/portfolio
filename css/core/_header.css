@@ -1,24 +1,63 @@
 @charset "UTF-8";
 /* Набросок стилей для шапки
  ----------------------------------------------------------------------------- */
-.header__logo {
-  width: 96px;
-}
-.header__stiky {
-  position: fixed;
-  top: 0;
-  left: 0;
+.header {
+  position: absolute;
   width: 100%;
+  padding: 27px 0;
+}
+@media (min-width: 768px) {
+  .header {
+    padding: 57px 0;
+  }
+}
+.header__logo {
+  text-decoration: none;
+  color: #34547a;
+  font-size: 41px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  .header__logo {
+    position: absolute;
+    left: 32px;
+    top: 148px;
+  }
+}
+@media (min-width: 992px) {
+  .header__logo {
+    position: initial;
+  }
+}
+.header__logo:hover {
+  color: #000;
 }
 .header__content {
   display: flex;
-  flex-direction: row;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: space-between;
-  max-width: 1135px;
+  max-width: 1185px;
   margin: 0 auto;
-  padding: 15px 0;
+  padding: 0 15px;
 }
-.header__left {
-  padding-top: 8px;
+@media (min-width: 768px) {
+  .header__content {
+    padding: 0 40px;
+  }
+}
+@media (min-width: 992px) {
+  .header__content {
+    justify-content: space-between;
+  }
+}
+@media (min-width: 768px) {
+  .header__right {
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .header__right {
+    width: auto;
+  }
 }

@@ -33,7 +33,7 @@
 @import 'core/footer';
 @import 'core/button';
 
-@import 'fonts/_icon_fonts';
+@import 'fonts/icon_fonts';
 
 @import 'vendor/modal';
 
@@ -46,7 +46,8 @@ body {}
 .main_content {}
 
 .firstScreen {
-    min-height: 693px;
+    // min-height: 693px;
+    min-height: 100vh;
     background: #EEEFF1;
     padding-top: 130px;
     padding-bottom: 20px;
@@ -66,14 +67,14 @@ body {}
     }
 
     &__left {
-
+        display: none;
         width: 100%;
         @media (min-width: 768px) {
+            display: flex;
             width: 50%;
             padding-right: 12px;
         }
         padding-bottom: 19px;
-        display: flex;
         justify-content: center;
 
         img {
@@ -87,6 +88,13 @@ body {}
         width: 100%;
         @media (min-width: 768px) {
             width: 50%;
+        }
+
+        img {
+            width: 100%;
+            @media (min-width: 600px) {
+                width: initial;
+            }
         }
 
     }
@@ -103,7 +111,10 @@ body {}
 
     &__description {
         line-height: 1.65;
-        margin: 0 auto 52px;
+        @media (min-width: 768px) {
+            margin: 0 auto 52px;
+        }
+        margin: 30px auto 52px;
         max-width: 540px;
 
     }
@@ -352,16 +363,22 @@ body {}
         top: 50%;
         left: 50%;
 
-        margin-top: -50px;
-        margin-left: -50px;
+        margin-top: -25px;
+        margin-left: -25px;
 
         cursor: pointer;
+        width: 50px;
+        @media (min-width: 768px) {
+            width: initial;
+            margin-top: -50px;
+            margin-left: -50px;
+        }
 
     }
 }
 
 .sixthSection {
-    margin-top: 29px;
+    // margin-top: 29px;
 
     &__content {
         display: flex;
