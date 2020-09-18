@@ -25,6 +25,23 @@
 	box-shadow: 0 2px 10px rgba(#000, .5);
 	z-index: 10;
 
+	&_small {
+		@media (min-width: 768px) {
+			display: block;
+			position: fixed;
+			left: -330px;
+			top: 0;
+			bottom: 0;
+			width: 300px;
+			padding-top: 80px;
+			transition: left 0.5s;
+
+			background-color: #fff;
+			box-shadow: 0 2px 10px rgba(#000, .5);
+			z-index: 10;
+		}
+	}
+
 	.navbar__swicher:checked ~ & {
 		left: 0;
 	}
@@ -34,6 +51,7 @@
 	}
 
 	&__toggle {
+
 		position: absolute;
 		color: #34547A;
 		left: 15px;
@@ -84,9 +102,47 @@
 		@media (min-width: 768px) {
 			display: none;
 		}
+
+		&_scroll {
+			// top: 400px;
+			position: fixed;
+			top: 50%;
+			border: none;
+			width: 34px;
+			height: 24px;
+			@media (min-width: 768px) {
+				display: inline;
+			}
+
+			&:after,
+			&:before {
+				content: '';
+				border: none;
+				// border-top: 4px solid;
+				border-right: 4px solid;
+				position: absolute;
+				top: 50%;
+				margin-top: -2px;
+				left: 0;
+				width: 100%;
+				height: 100%;
+
+			}
+
+			&:before {
+				top: 2px;
+				transform: rotate(45deg);
+			}
+
+			&:after {
+
+				transform: rotate(-45deg);
+			}
+		}
 	}
 
 	&__item {
+
 		margin: 30px 15px;
 
 		&:last-child {
@@ -99,6 +155,17 @@
 		@media (min-width: 992px) {
 
 			margin: 0 21px;
+		}
+
+		&_marginJS {
+			@media (min-width: 768px) {
+
+				margin: 30px 15px;
+			}
+			@media (min-width: 992px) {
+
+				margin: 30px 15px;
+			}
 		}
 	}
 

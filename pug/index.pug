@@ -1,5 +1,6 @@
 extends layout/layout.pug
-
+//- - var baseDir = "wp-content/themes/portfolio/";
+//- - var baseDir = "";
 block content
     // begin firstScreen
     section#firstScreen.firstScreen.section
@@ -7,12 +8,12 @@ block content
 
             .firstScreen__content
                 .firstScreen__left
-                    img(src="img/laptop.svg", alt="")
+                    img(src!="<?php echo wp_get_attachment_url(SCF::get( 'firstScreen__img' )) ?>", alt="")
                 .firstScreen__right
-                    h1.firstScreen__title Верстка сайтов
+                    h1.firstScreen__title <?php echo SCF::get( 'firstScreen__title' ); ?>
                     .firstScreen__description
-                        p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
-                    a(href="#eightSection").btn НАПИСАТЬ МНЕ
+                        p <?php echo SCF::get( 'firstScreen__description' ); ?>
+                    a(href="#eightSection").btn <?php echo SCF::get( 'btn' ); ?>
 
     // end firstScreen
     // begin secondSection
@@ -20,50 +21,66 @@ block content
         .container_center
             .secondSection__content
                 .clause
-                    h2.section__title Обо мне
-                    .clause__description Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+
+                    h2.section__title <?php echo SCF::get( 'secondSection__title' ); ?>
+                    .clause__description <?php echo SCF::get( 'secondSection__description' ); ?>
 
     // end secondSection
     // begin thirdSection
     section#thirdSection.thirdSection.section
         .container_center
             .thirdSection__content
-                .thirdSection__item
-                    .thirdSection__image
-                        i.icon_project
-                    .thirdSection__text
-                        .thirdSection__number 40+
-                        .thirdSection__subject проектов    
-                .thirdSection__item
-                    .thirdSection__image
-                        i.icon_project
-                    .thirdSection__text
-                        .thirdSection__number 40+
-                        .thirdSection__subject проектов    
-                .thirdSection__item
-                    .thirdSection__image
-                        i.icon_project
-                    .thirdSection__text
-                        .thirdSection__number 40+
-                        .thirdSection__subject проектов    
-                .thirdSection__item
-                    .thirdSection__image
-                        i.icon_project
-                    .thirdSection__text
-                        .thirdSection__number 40+
-                        .thirdSection__subject проектов    
-                .thirdSection__item
-                    .thirdSection__image
-                        i.icon_project
-                    .thirdSection__text
-                        .thirdSection__number 40+
-                        .thirdSection__subject проектов    
-                .thirdSection__item
-                    .thirdSection__image
-                        i.icon_project
-                    .thirdSection__text
-                        .thirdSection__number 40+
-                        .thirdSection__subject проектов    
+                |<?php
+                |    $thirdSection__item = SCF::get('thirdSection__item');
+                |
+                |    foreach ($thirdSection__item as $item) {
+                |        echo '
+                |        <div class="thirdSection__item">
+                |          <div class="thirdSection__image"><i class="icon_'.$item['thirdSection__image'].'"></i></div>
+                |          <div class="thirdSection__text">
+                |            <div class="thirdSection__number">'.$item['thirdSection__number'].'</div>
+                |            <div class="thirdSection__subject">'.$item['thirdSection__subject'].'    </div>
+                |          </div>
+                |        </div>
+                |        ';
+                |    };
+                |?>
+                //- .thirdSection__item
+                //-     .thirdSection__image
+                //-         i.icon_project
+                //-     .thirdSection__text
+                //-         .thirdSection__number 40+
+                //-         .thirdSection__subject проектов    
+                //- .thirdSection__item
+                //-     .thirdSection__image
+                //-         i.icon_project
+                //-     .thirdSection__text
+                //-         .thirdSection__number 40+
+                //-         .thirdSection__subject проектов    
+                //- .thirdSection__item
+                //-     .thirdSection__image
+                //-         i.icon_project
+                //-     .thirdSection__text
+                //-         .thirdSection__number 40+
+                //-         .thirdSection__subject проектов    
+                //- .thirdSection__item
+                //-     .thirdSection__image
+                //-         i.icon_project
+                //-     .thirdSection__text
+                //-         .thirdSection__number 40+
+                //-         .thirdSection__subject проектов    
+                //- .thirdSection__item
+                //-     .thirdSection__image
+                //-         i.icon_project
+                //-     .thirdSection__text
+                //-         .thirdSection__number 40+
+                //-         .thirdSection__subject проектов    
+                //- .thirdSection__item
+                //-     .thirdSection__image
+                //-         i.icon_project
+                //-     .thirdSection__text
+                //-         .thirdSection__number 40+
+                //-         .thirdSection__subject проектов    
 
     // end thirdSection
     // begin fourthSection
@@ -72,25 +89,46 @@ block content
             .fourthSection__content
                 .fourthSection__left
                     .fourthSection__skillBox
-                        h2.section__title.section__title_left Мои навыки
+                        h2.section__title.section__title_left 
                         .fourthSection__skillList
-                            .fourthSection__item
-                                .fourthSection__skillName Adobe Photoshop
-                                .progress
-                                    .progress__bar(style="width: 50%")
-                            .fourthSection__item
-                                .fourthSection__skillName Adobe Photoshop
-                                .progress
-                                    .progress__bar(style="width: 67%")
-                            .fourthSection__item
-                                .fourthSection__skillName Adobe Photoshop
-                                .progress
-                                    .progress__bar(style="width: 38%")
+                            //- |<?php echo SCF::get( '' ); ?>
+                            |<?php
+                            |     $Skills = SCF::get('Skills');
+                            //- |     var_dump($Skills);
+                            |     foreach ($Skills as $item) {
+                            |         echo '
+                            |             <div class="fourthSection__item">
+                            |                 <div class="fourthSection__skillName">'.$item['fourthSection__skillName'].'</div>
+                            |                 <div class="progress">
+                            |                     <div class="progress__bar" style="width: '.$item['progress__bar'].'%"></div>
+                            |                 </div>
+                            |             </div>
+                            |         ';
+                            |     };
+                            |  
+                            |
+                            | ?>
+
+
+                            //-     
+
+                            //- .fourthSection__item
+                            //-     .fourthSection__skillName Adobe Photoshop 
+                            //-     .progress
+                            //-         .progress__bar(style="width: 38%")
+                            //- .fourthSection__item
+                            //-     .fourthSection__skillName Adobe Photoshop 
+                            //-     .progress
+                            //-         .progress__bar(style="width: 38%")
+                            //- .fourthSection__item
+                            //-     .fourthSection__skillName Adobe Photoshop 
+                            //-     .progress
+                            //-         .progress__bar(style="width: 38%")
 
 
                 .fourthSection__right
                     .fourthSection__image
-                        img(src="img/my_photo.jpg", alt="")
+                        img(src!="<?php echo wp_get_attachment_url(SCF::get( 'fourthSection__image' )) ?>", alt="")
 
     // end fourthSection
     // begin fifthSection
@@ -98,11 +136,12 @@ block content
         .container_center
             .fifthSection__content
                 .clause
-                    h2.section__title Как я работаю
-                    .clause__description Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+                    h2.section__title <?php echo SCF::get( 'fifthSection__title' ); ?>
+                    .clause__description <?php echo SCF::get( 'fifthSection__description' ); ?>
                 .video
                     #7Nn7NZI_LN4.video__wrapper.js_youtube 
-                        img(src="img/prev_video.jpg", alt="").video__prev
+                        img(src!="<?php echo wp_get_attachment_url(SCF::get( 'video__prev' )) ?>", alt="").video__prev
+                        img.video__play(src!="<?php echo wp_get_attachment_url(SCF::get( 'video__play' )) ?>" alt="Play")
 
 
 
@@ -110,34 +149,47 @@ block content
     // begin sixthSection
     section#sixthSection.sixthSection.section
         .sixthSection__content
-            each item in [1, 2, 1, 2, 2, 1, 2, 1]
-                .sixthSection__item
-                    a.sixthSection__plate(href="projects/freight_transportation/index.html" style="background-image: url('img/job-"+item+".jpg')")
-                        .sixthSection__select
-                            i.icon_eye
+            .section__title Мои работы
+            .sixthSection__portfolio
+                |<?php
+                |    $sixthSection__content = SCF::get('sixthSection__content');
+                |
+                |    foreach ($sixthSection__content as $item) {
+                |
+                |        echo '
+                |            <div class="sixthSection__item"><a class="sixthSection__plate" href="'.$item['sixthSection__plate'].'" style="background-image: url('.wp_get_attachment_url($item['sixthSection__plate_bg']).')">
+                |    <div class="sixthSection__select"><i class="icon_'.$item['sixthSection__select_icon'].'"></i></div></a></div>
+                |        ';
+                |    };
+                |?>
+            //- each item in [1, 2, 1, 2, 2, 1, 2, 1]
+            //-     .sixthSection__item
+            //-         a.sixthSection__plate(href=baseDir+"projects/freight_transportation/index.html" style="background-image: url("+baseDir+"img/job-"+item+".jpg)")
+            //-             .sixthSection__select
+                i.icon_eye
 
     // end sixthSection
-    // begin seventhSection
-    section#seventhSection.seventhSection.section
-        .container_center
-            .seventhSection__content
-                .seventhSection__item
-                    img(src="img/microsoft.svg", alt="")
-                .seventhSection__item
-                    img(src="img/microsoft.svg", alt="")
-                .seventhSection__item
-                    img(src="img/microsoft.svg", alt="")
-                .seventhSection__item
-                    img(src="img/microsoft.svg", alt="")
-
-    // end seventhSection
+    //- // begin seventhSection
+    //- section#seventhSection.seventhSection.section
+    //-     .container_center
+    //-         .seventhSection__content
+    //-             .seventhSection__item
+    //-                 img(src="img/microsoft.svg", alt="")
+    //-             .seventhSection__item
+    //-                 img(src="img/microsoft.svg", alt="")
+    //-             .seventhSection__item
+    //-                 img(src="img/microsoft.svg", alt="")
+    //-             .seventhSection__item
+    //-                 img(src="img/microsoft.svg", alt="")
+    //- 
+    //- // end seventhSection
     // begin eightSection
     section#eightSection.eightSection.section
         .container_center
             .eightSection__formBox
                 .clause
-                    h2.section__title Хотите веб-сайт?
-                    .clause__description Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+                    h2.section__title <?php echo SCF::get( 'eightSection__title' ); ?>
+                    .clause__description <?php echo SCF::get( 'eightSection__description' ); ?>
                 form.eightSection__grid(action="mail.php" method="POST")
                     .eightSection__row
                         input(type="text", name="name", placeholder="Ваше имя", required)

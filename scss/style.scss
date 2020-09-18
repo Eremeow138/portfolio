@@ -379,18 +379,30 @@ body {}
 
 .sixthSection {
     // margin-top: 29px;
+    padding-top: 92px;
 
     &__content {
+
+        // overflow: hidden;
+
+    }
+
+    &__portfolio {
         display: flex;
         flex-wrap: wrap;
+        // margin-left: -15px;
+        margin-top: 70px;
+        margin-left: -15px;
+        margin-right: -15px;
     }
 
     &__item {
-        width: 50%;
-
+        width: 100%;
+        margin: 0 15px 30px;
         @media (min-width: 768px) {
-            width: 25%;
+            width: calc(50% - 30px);
         }
+        // padding-bottom: 25%;
 
     }
 
@@ -399,8 +411,16 @@ body {}
         position: relative;
         background: center no-repeat;
         background-size: cover;
-        padding-bottom: 100%;
+        padding-bottom: 63%;
         width: 100%;
+        // display: block;
+        // position: relative;
+        // top: 0;
+        // left: 0;
+        // right: 0;
+        // bottom: 0;
+        // background: center no-repeat;
+        // background-size: cover;
 
         &:before {}
     }

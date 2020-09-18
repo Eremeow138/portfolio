@@ -3,7 +3,35 @@
 // <div class="video__wrapper js_youtube" id="Y2uDpiHRz2Q">
 // 	<img src="img/путь_к_фоновому изображению" alt="" class="video__prev">
 // </div>
+$(document).ready(function(){
+    var $element = $('.thirdSection');
+    let counter = 0;
+    $(window).scroll(function() {
+      var scroll = $(window).scrollTop() + $(window).height();
+      //Если скролл до конца елемента
+      //var offset = $element.offset().top + $element.height();
+      //Если скролл до начала елемента
+      var offset = $element.offset().top;
+      // console.log(scroll);
+      // console.log(offset);
+      if (scroll > offset && counter == 0) {
+        // $('#block').fadeIn(500);
+        $('.navbar').addClass('navbar_small');
 
+        $('.navbar__item').addClass('navbar__item_marginJS');
+        counter = 1;
+      }
+      if (scroll < offset && counter == 1) {
+          $('.navbar').removeClass('navbar_small');
+          $('.navbar__item').removeClass('navbar__item_marginJS');
+          counter = 0;
+      }
+    });
+    // $('.btn').click(function(){
+    // 	$('#block').slideUp();
+    // });
+
+   });
 
 console.log('script is run');
 $(function () {
@@ -17,7 +45,7 @@ $(function () {
             // $(this).css('background-image', 'img/prev_video.jpg');
 
             // Добавляем иконку Play поверх миниатюры, чтобы было похоже на видеоплеер
-            $(this).append($('<img src="img/play.svg" alt="Play" class="video__play">'));
+            // $(this).append($('<img src="img/play.svg" alt="Play" class="video__play">'));
 
         });
 
@@ -43,7 +71,20 @@ $(function () {
     }
 
 });
+function hideMenu() {
+    $('.navbar__link').on('click', function() {
+        if ($(window).width() < 768) {
+            $('#navbar_toggle').prop('checked', false);
+        }
 
+
+
+
+    });
+
+
+}
+hideMenu();
 // отправка и проверка формы + модальное окно
 function submitForm() {
 
