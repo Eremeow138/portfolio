@@ -1,9 +1,9 @@
-// Видео youtube для страницы
-// В html выглядит так
-// <div class="video__wrapper js_youtube" id="Y2uDpiHRz2Q">
-// 	<img src="img/путь_к_фоновому изображению" alt="" class="video__prev">
-// </div>
+// window.onload = function () {
+//     console.log('g');
+// };
+//отслеживаем скролл и делаем что нам надо (например играем с меню)
 $(document).ready(function(){
+
     var $element = $('.thirdSection');
     let counter = 0;
     $(window).scroll(function() {
@@ -19,21 +19,31 @@ $(document).ready(function(){
         $('.navbar').addClass('navbar_small');
 
         $('.navbar__item').addClass('navbar__item_marginJS');
+
+        $('.navbar__toggle.navbar__toggle_scroll').addClass('navbar__toggle_display');
+
+        $('.navbar__toggle.navbar__toggle_scroll.navbar__toggle_display').addClass('animate__animated animate__pulse animate__infinite');
+
         counter = 1;
+
       }
       if (scroll < offset && counter == 1) {
           $('.navbar').removeClass('navbar_small');
           $('.navbar__item').removeClass('navbar__item_marginJS');
+          $('.navbar__toggle.navbar__toggle_scroll').removeClass('navbar__toggle_display');
+          $('#navbar_tog').prop('checked', false);
           counter = 0;
       }
     });
-    // $('.btn').click(function(){
-    // 	$('#block').slideUp();
-    // });
+
 
    });
 
-console.log('script is run');
+   // Видео youtube для страницы
+   // В html выглядит так
+   // <div class="video__wrapper js_youtube" id="Y2uDpiHRz2Q">
+   // 	<img src="img/путь_к_фоновому изображению" alt="" class="video__prev">
+   // </div>
 $(function () {
 
     // Проверяем наличие элемента с классом js_youtube
@@ -72,18 +82,21 @@ $(function () {
 
 });
 function hideMenu() {
+
     $('.navbar__link').on('click', function() {
-        if ($(window).width() < 768) {
-            $('#navbar_toggle').prop('checked', false);
-        }
 
-
-
-
+            $('#navbar_tog').prop('checked', false);
     });
 
 
 }
+// $(document).mouseup(function (e){
+//
+//     if (!$('.navbar').is(e.target)) {
+//             $('#navbar_tog').prop('checked', false);
+//     }
+//
+// });
 hideMenu();
 // отправка и проверка формы + модальное окно
 function submitForm() {
@@ -228,8 +241,24 @@ $('a[href^="#"]').click( function(e){
 	}
 	return false;
 });
+$('.firstScreen__arrow').on('click', function() {
+    $('html, body').animate({ scrollTop: $("#secondSection").offset().top }, 500);
+});
 
 replaceElement($('.firstScreen__left').children('img'),$('.firstScreen__left'),$('.firstScreen__title'),768);
+
+
+$('.firstScreen__left img').on('click', function() {
+    $(this).addClass('animate__animated animate__hinge');
+    $('.firstScreen__description p').css('opacity', '0');
+    function wtf() {
+        $('.firstScreen__description p').text('Ты чего наделал(');
+        $('.firstScreen__description p').css('opacity', '1');
+    }
+    setTimeout(wtf, 2000);
+
+});
+// replaceElement($('.firstScreen__left').children('img'),$('.firstScreen__left'),$('.firstScreen__title'),768);
 // Показать лоадер при загрузке товаров
 function showLoader(el) {
     // el.addClass('loaded');
@@ -259,15 +288,27 @@ function hideLoader(el, time = 10) {
 
 function replaceElement(element, placeForDesctop, placeForMobile, width){
 
-      let resized = false;
+
 
       let el = element, pd= placeForDesctop, pm = placeForMobile;
+      window.onload = function () {
+          let currentWidth = $(window).width()+scrollbarWidth();
+
+
+          // console.log();
+
+          if (currentWidth < width) {
+              console.log("isMobile");
+              pm.after(el);
+          } else {
+              console.log('isDesctop');
+              pd.append(el);
+          }
+      };
       $(window).resize(function(event) {
           let currentWidth = $(window).width()+scrollbarWidth();
 
-          // Запрещаем выполнение скриптов при смене только высоты вьюпорта (фикс для скролла в IOS и Android >=v.5)
-          if (resized == currentWidth) { return; }
-          resized = currentWidth;
+
           // console.log();
 
           if (currentWidth < width) {

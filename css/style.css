@@ -565,6 +565,7 @@ p {
   position: absolute;
   width: 100%;
   padding: 27px 0;
+  z-index: 10;
 }
 @media (min-width: 768px) {
   .header {
@@ -659,6 +660,7 @@ p {
     width: 300px;
     padding-top: 80px;
     transition: left 0.5s;
+    padding-left: 40px;
     background-color: #fff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     z-index: 10;
@@ -671,6 +673,7 @@ p {
   display: none;
 }
 .navbar__toggle {
+  --animate-duration: 1.5s;
   position: absolute;
   color: #34547A;
   left: 15px;
@@ -680,7 +683,7 @@ p {
   border: 4px solid;
   border-left: 0;
   border-right: 0;
-  z-index: 15;
+  z-index: 20;
   cursor: pointer;
 }
 .navbar__toggle:after, .navbar__toggle:before {
@@ -698,7 +701,7 @@ p {
   position: fixed;
 }
 .navbar__swicher:checked ~ .navbar__toggle:after, .navbar__swicher:checked ~ .navbar__toggle:before {
-  transition: 0.8s;
+  transition: transform 0.8s;
 }
 .navbar__swicher:checked ~ .navbar__toggle:before {
   transform: rotate(45deg);
@@ -715,27 +718,23 @@ p {
   }
 }
 .navbar__toggle_scroll {
+  color: #000;
   position: fixed;
   top: 50%;
+  left: -15px;
   border: none;
-  width: 34px;
-  height: 24px;
-}
-@media (min-width: 768px) {
-  .navbar__toggle_scroll {
-    display: inline;
-  }
+  display: none;
+  opacity: 0;
+  transition: left 0.5s, opacity 1s;
 }
 .navbar__toggle_scroll:after, .navbar__toggle_scroll:before {
   content: "";
   border: none;
   border-right: 4px solid;
-  position: absolute;
-  top: 50%;
   margin-top: -2px;
-  left: 0;
   width: 100%;
   height: 100%;
+  transition: transform 0.8s, opacity 1s;
 }
 .navbar__toggle_scroll:before {
   top: 2px;
@@ -743,6 +742,26 @@ p {
 }
 .navbar__toggle_scroll:after {
   transform: rotate(-45deg);
+}
+.navbar__swicher:checked ~ .navbar__toggle_scroll {
+  left: 260px;
+  transition: left 0.8s;
+}
+.navbar__swicher:checked ~ .navbar__toggle_scroll:before {
+  transform: rotate(135deg);
+}
+.navbar__swicher:checked ~ .navbar__toggle_scroll:after {
+  transform: rotate(-135deg);
+}
+.navbar__toggle_display {
+  display: inline;
+  opacity: 1;
+}
+@media (min-width: 768px) {
+  .navbar__toggle_display {
+    display: inline;
+    opacity: 1;
+  }
 }
 .navbar__item {
   margin: 30px 15px;
@@ -903,8 +922,8 @@ p {
 
 @font-face {
   font-family: "portfolio_icons";
-  src: url("../fonts/portfolio_icons-v1.2/fonts/portfolio_icons.eot?vhkw9w");
-  src: url("../fonts/portfolio_icons-v1.2/fonts/portfolio_icons.eot?vhkw9w#iefix") format("embedded-opentype"), url("../fonts/portfolio_icons-v1.2/fonts/portfolio_icons.ttf?vhkw9w") format("truetype"), url("../fonts/portfolio_icons-v1.2/fonts/portfolio_icons.woff?vhkw9w") format("woff"), url("../fonts/portfolio_icons-v1.2/fonts/portfolio_icons.svg?vhkw9w#portfolio_icons") format("svg");
+  src: url("../fonts/portfolio_icons-v1.3/fonts/portfolio_icons.eot?rw2bp6");
+  src: url("../fonts/portfolio_icons-v1.3/fonts/portfolio_icons.eot?rw2bp6#iefix") format("embedded-opentype"), url("../fonts/portfolio_icons-v1.3/fonts/portfolio_icons.ttf?rw2bp6") format("truetype"), url("../fonts/portfolio_icons-v1.3/fonts/portfolio_icons.woff?rw2bp6") format("woff"), url("../fonts/portfolio_icons-v1.3/fonts/portfolio_icons.svg?rw2bp6#portfolio_icons") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -922,6 +941,10 @@ p {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon_arrow-down:before {
+  content: "";
 }
 
 .icon_cat:before {
@@ -1091,7 +1114,8 @@ p {
   min-height: 100vh;
   background: #EEEFF1;
   padding-top: 130px;
-  padding-bottom: 20px;
+  padding-bottom: 140px;
+  position: relative;
 }
 @media (min-width: 768px) {
   .firstScreen {
@@ -1124,7 +1148,9 @@ p {
   }
 }
 .firstScreen__left img {
+  cursor: pointer;
   display: block;
+  --animate-duration: 1.2s;
 }
 .firstScreen__right {
   padding: 0 15px;
@@ -1163,6 +1189,20 @@ p {
   .firstScreen__description {
     margin: 0 auto 52px;
   }
+}
+.firstScreen__description p {
+  transition: all 1s;
+}
+.firstScreen__arrow {
+  cursor: pointer;
+  --animate-duration: 2s;
+  position: absolute;
+  bottom: 20px;
+  left: calc(50% - 40px);
+}
+.firstScreen__arrow .icon_arrow-down {
+  color: #000;
+  font-size: 80px;
 }
 
 .secondSection__content {

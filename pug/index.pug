@@ -14,6 +14,9 @@ block content
                     .firstScreen__description
                         p <?php echo SCF::get( 'firstScreen__description' ); ?>
                     a(href="#eightSection").btn <?php echo SCF::get( 'btn' ); ?>
+        .firstScreen__arrow.animate__animated.animate__bounce.animate__infinite
+            i.icon_arrow-down 
+
 
     // end firstScreen
     // begin secondSection
@@ -139,9 +142,13 @@ block content
                     h2.section__title <?php echo SCF::get( 'fifthSection__title' ); ?>
                     .clause__description <?php echo SCF::get( 'fifthSection__description' ); ?>
                 .video
-                    #7Nn7NZI_LN4.video__wrapper.js_youtube 
-                        img(src!="<?php echo wp_get_attachment_url(SCF::get( 'video__prev' )) ?>", alt="").video__prev
-                        img.video__play(src!="<?php echo wp_get_attachment_url(SCF::get( 'video__play' )) ?>" alt="Play")
+                    <div class="video__wrapper js_youtube" id="<?php echo SCF::get( 'video__youtube' ); ?>"> 
+                        <img class="video__prev" src="<?php echo wp_get_attachment_url(SCF::get( 'video__prev' )) ?>" alt=""/>
+                        <img class="video__play" src="<?php echo wp_get_attachment_url(SCF::get( 'video__play' )) ?>" alt="Play"/>
+                    </div>
+                    //- #7Nn7NZI_LN4.video__wrapper.js_youtube 
+                    //-     img(src!="<?php echo wp_get_attachment_url(SCF::get( 'video__prev' )) ?>", alt="").video__prev
+                    //-     img.video__play(src!="<?php echo wp_get_attachment_url(SCF::get( 'video__play' )) ?>" alt="Play")
 
 
 

@@ -50,7 +50,9 @@ body {}
     min-height: 100vh;
     background: #EEEFF1;
     padding-top: 130px;
-    padding-bottom: 20px;
+    // padding-bottom: 20px;
+    padding-bottom: 140px;
+    position: relative;
     @media (min-width: 768px) {
         padding-top: 250px;
     }
@@ -78,7 +80,9 @@ body {}
         justify-content: center;
 
         img {
+            cursor: pointer;
             display: block;
+            --animate-duration: 1.2s;
         }
     }
 
@@ -100,6 +104,7 @@ body {}
     }
 
     &__title {
+        // transition: all 1s;
         margin: 0 0 45px;
         color: #000000;
         font-size: 39px;
@@ -110,6 +115,7 @@ body {}
     }
 
     &__description {
+
         line-height: 1.65;
         @media (min-width: 768px) {
             margin: 0 auto 52px;
@@ -117,6 +123,24 @@ body {}
         margin: 30px auto 52px;
         max-width: 540px;
 
+        p {
+            transition: all 1s;
+        }
+    }
+
+    &__arrow {
+        cursor: pointer;
+        --animate-duration: 2s;
+        position: absolute;
+        bottom: 20px;
+        left: calc(50% - 40px);
+
+        .icon_arrow-down {
+            color: #000;
+            font-size: 80px;
+
+        }
+        // z-index: 10;
     }
 
 }

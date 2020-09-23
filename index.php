@@ -15,9 +15,9 @@
         <div class="header__content">
           <div class="header__left"><a class="header__logo" href="/"><?php echo SCF::get( 'header__logo' ); ?></a></div>
           <nav class="header__right">
-            <input class="navbar__swicher" id="navbar_toggle" type="checkbox"/>
-            <label class="navbar__toggle" for="navbar_toggle"></label>
-            <label class="navbar__toggle navbar__toggle_scroll" for="navbar_toggle"></label>
+            <input class="navbar__swicher" id="navbar_tog" type="checkbox"/>
+            <label class="navbar__toggle" for="navbar_tog"></label>
+            <label class="navbar__toggle navbar__toggle_scroll" for="navbar_tog"></label>
             <ul class="navbar">
               <li class="navbar__item"><a class="navbar__link" href="#firstScreen">Главная</a></li>
               <li class="navbar__item"><a class="navbar__link" href="#secondSection">Об авторе</a></li>
@@ -42,6 +42,7 @@
               </div>
             </div>
           </div>
+          <div class="firstScreen__arrow animate__animated animate__bounce animate__infinite"><i class="icon_arrow-down"> </i></div>
         </section>
         <!-- end firstScreen-->
         <!-- begin secondSection-->
@@ -120,8 +121,10 @@
                 <h2 class="section__title"><?php echo SCF::get( 'fifthSection__title' ); ?></h2>
                 <div class="clause__description"><?php echo SCF::get( 'fifthSection__description' ); ?></div>
               </div>
-              <div class="video">
-                <div class="video__wrapper js_youtube" id="7Nn7NZI_LN4"> <img class="video__prev" src="<?php echo wp_get_attachment_url(SCF::get( 'video__prev' )) ?>" alt=""/><img class="video__play" src="<?php echo wp_get_attachment_url(SCF::get( 'video__play' )) ?>" alt="Play"/></div>
+              <div class="video"><div class="video__wrapper js_youtube" id="<?php echo SCF::get( 'video__youtube' ); ?>"> 
+<img class="video__prev" src="<?php echo wp_get_attachment_url(SCF::get( 'video__prev' )) ?>" alt=""/>
+<img class="video__play" src="<?php echo wp_get_attachment_url(SCF::get( 'video__play' )) ?>" alt="Play"/>
+</div>
               </div>
             </div>
           </div>
@@ -192,7 +195,17 @@
             </div>
           </div>
           <div class="footer__design"><a href="http://d-e-n.ru/" target="_blank"><?php echo SCF::get( 'footer__design_name' ); ?></a></div>
-          <div class="footer__social"><a class="footer__link" href="https://vk.com/eremeow" target="_blank"><i class="icon_vk"></i></a><a class="footer__link" href="https://vk.com/eremeow" target="_blank"><i class="icon_vk"></i></a><a class="footer__link" href="https://vk.com/eremeow" target="_blank"><i class="icon_vk"></i></a></div>
+          <div class="footer__social">
+            <?php
+               $footer__social = SCF::get('footer__social');
+            
+               foreach ($footer__social as $item) {
+                   echo '
+                       <a class="footer__link" href="'.$item['footer__link'].'" target="_blank"><i class="icon_'.$item['footer__icon'].'"></i></a>
+                   ';
+               };
+            ?>
+          </div>
         </div>
       </div>
     </footer>
