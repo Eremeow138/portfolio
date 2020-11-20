@@ -3,8 +3,12 @@
 .header {
 	position: absolute;
 	width: 100%;
-	padding: 27px 0;
+	padding: 15px 0;
 	z-index: 10; //поменял для релейтива фёрст скрин
+	@media (min-width: 425px) {
+		// padding: 21px 0 57px;
+		padding: 27px 0;
+	}
 	@media (min-width: 768px) {
 		// padding: 21px 0 57px;
 		padding: 57px 0;

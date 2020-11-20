@@ -120,6 +120,7 @@
               <div class="clause">
                 <h2 class="section__title"><?php echo SCF::get( 'fifthSection__title' ); ?></h2>
                 <div class="clause__description"><?php echo SCF::get( 'fifthSection__description' ); ?></div>
+                <div class="clause__list"><?php echo SCF::get( 'fifthSection__list' ); ?></div>
               </div>
               <div class="video"><div class="video__wrapper js_youtube" id="<?php echo SCF::get( 'video__youtube' ); ?>"> 
 <img class="video__prev" src="<?php echo wp_get_attachment_url(SCF::get( 'video__prev' )) ?>" alt=""/>
@@ -141,7 +142,7 @@
                  foreach ($sixthSection__content as $item) {
               
                      echo '
-                         <div class="sixthSection__item"><a class="sixthSection__plate" href="'.$item['sixthSection__plate'].'" style="background-image: url('.wp_get_attachment_url($item['sixthSection__plate_bg']).')">
+                         <div class="sixthSection__item"><a class="sixthSection__plate" href="'.$item['sixthSection__plate'].'" target="_blank" style="background-image: url('.wp_get_attachment_url($item['sixthSection__plate_bg']).')">
                  <div class="sixthSection__select"><i class="icon_'.$item['sixthSection__select_icon'].'"></i></div></a></div>
                      ';
                  };
@@ -158,7 +159,7 @@
                 <h2 class="section__title"><?php echo SCF::get( 'eightSection__title' ); ?></h2>
                 <div class="clause__description"><?php echo SCF::get( 'eightSection__description' ); ?></div>
               </div>
-              <form class="eightSection__grid" action="mail.php" method="POST">
+              <form class="eightSection__grid" id="form" method="POST" enctype="multipart/form-data" onsubmit="send(event, 'wp-content/themes/portfolio/send.php')">
                 <div class="eightSection__row">
                   <input type="text" name="name" placeholder="Ваше имя" required="required"/>
                 </div>
@@ -166,7 +167,7 @@
                   <input type="text" name="email" placeholder="Ваш e-mail" required="required"/>
                 </div>
                 <div class="eightSection__row eightSection__row_full">
-                  <textarea type="text" name="message" placeholder="Сообщение"></textarea>
+                  <textarea name="message" placeholder="Сообщение"></textarea>
                 </div>
                 <button class="btn btn_form" type="submit">Отправить</button>
               </form>
@@ -209,8 +210,8 @@
         </div>
       </div>
     </footer>
+    <script src="wp-content/themes/portfolio/js/jquery.js"></script>
+    <script src="wp-content/themes/portfolio/js/modal.js"></script>
+    <script src="wp-content/themes/portfolio/js/script.js"></script>
   </body>
 </html>
-<script src="wp-content/themes/portfolio/js/jquery.js"></script>
-<script src="wp-content/themes/portfolio/js/modal.js"></script>
-<script src="wp-content/themes/portfolio/js/script.js"></script>

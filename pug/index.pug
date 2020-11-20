@@ -141,6 +141,24 @@ block content
                 .clause
                     h2.section__title <?php echo SCF::get( 'fifthSection__title' ); ?>
                     .clause__description <?php echo SCF::get( 'fifthSection__description' ); ?>
+                    .clause__list <?php echo SCF::get( 'fifthSection__list' ); ?>
+
+                    //- ul.clause__list
+                    //-     |<?php
+                    //-     |     $List = SCF::get('List');
+                    //-     //- |     var_dump($Skills);
+                    //-     |     foreach ($List as $item) {
+                    //-     |         echo '
+                    //-     |             <li class="clause__item">'.$item['fifthSection__item'].'</li>
+                    //-     |         ';
+                    //-     |     };
+                    //-     |  
+                    //-     |
+                    //-     | ?>
+                    //- li.clause__item item
+                    //- li.clause__item item
+                    //- li.clause__item item
+                    //- li.clause__item item
                 .video
                     <div class="video__wrapper js_youtube" id="<?php echo SCF::get( 'video__youtube' ); ?>"> 
                         <img class="video__prev" src="<?php echo wp_get_attachment_url(SCF::get( 'video__prev' )) ?>" alt=""/>
@@ -164,7 +182,7 @@ block content
                 |    foreach ($sixthSection__content as $item) {
                 |
                 |        echo '
-                |            <div class="sixthSection__item"><a class="sixthSection__plate" href="'.$item['sixthSection__plate'].'" style="background-image: url('.wp_get_attachment_url($item['sixthSection__plate_bg']).')">
+                |            <div class="sixthSection__item"><a class="sixthSection__plate" href="'.$item['sixthSection__plate'].'" target="_blank" style="background-image: url('.wp_get_attachment_url($item['sixthSection__plate_bg']).')">
                 |    <div class="sixthSection__select"><i class="icon_'.$item['sixthSection__select_icon'].'"></i></div></a></div>
                 |        ';
                 |    };
@@ -197,13 +215,14 @@ block content
                 .clause
                     h2.section__title <?php echo SCF::get( 'eightSection__title' ); ?>
                     .clause__description <?php echo SCF::get( 'eightSection__description' ); ?>
-                form.eightSection__grid(action="mail.php" method="POST")
+                //- form.eightSection__grid(action="wp-content/themes/portfolio/mail.php" method="POST")
+                form#form.eightSection__grid(method="POST" enctype="multipart/form-data" onsubmit="send(event, 'wp-content/themes/portfolio/send.php')")
                     .eightSection__row
                         input(type="text", name="name", placeholder="Ваше имя", required)
                     .eightSection__row
                         input(type="text", name="email", placeholder="Ваш e-mail", required)
                     .eightSection__row.eightSection__row_full
-                        textarea(type="text", name="message", placeholder="Сообщение")
+                        textarea(name="message", placeholder="Сообщение")
                     button.btn.btn_form(type="submit") Отправить
 
     // end eightSection

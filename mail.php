@@ -14,12 +14,12 @@ $message = $_POST['message'];
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.yandex.ru';  																							// Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'eremeowMailer@yandex.ru'; // Ваш логин от почты с которой будут отправляться письма
-$mail->Password = 'PososiPotomProsi343'; // Ваш пароль от почты с которой будут отправляться письма
+$mail->Username = 'eremeow138@yandex.ru'; // Ваш логин от почты с которой будут отправляться письма
+$mail->Password = 'HondaNeMashina1488'; // Ваш пароль от почты с которой будут отправляться письма
 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465; // TCP port to connect to / этот порт может отличаться у других провайдеров
 
-$mail->setFrom('eremeowMailer@yandex.ru'); // от кого будет уходить письмо?
+$mail->setFrom('eremeow138@yandex.ru'); // от кого будет уходить письмо?
 $mail->addAddress('eremeow138@yandex.ru');     // Кому будет уходить письмо
 //$mail->addAddress('ellen@example.com');               // Name is optional
 //$mail->addReplyTo('info@example.com', 'Information');

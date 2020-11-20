@@ -48,11 +48,17 @@ body {}
 .firstScreen {
     // min-height: 693px;
     min-height: 100vh;
+    min-height: calc(var(--vh,1vh)*100);
     background: #EEEFF1;
-    padding-top: 130px;
+    padding-top: 80px;
     // padding-bottom: 20px;
-    padding-bottom: 140px;
+    padding-bottom: 80px;
     position: relative;
+    transition: height 1s;
+    @media (min-width: 425px) {
+        padding-top: 130px;
+        padding-bottom: 140px;
+    }
     @media (min-width: 768px) {
         padding-top: 250px;
     }
@@ -95,7 +101,10 @@ body {}
         }
 
         img {
-            width: 100%;
+            width: 60%;
+            @media (min-width: 425px) {
+                width: 100%;
+            }
             @media (min-width: 600px) {
                 width: initial;
             }
@@ -105,10 +114,14 @@ body {}
 
     &__title {
         // transition: all 1s;
-        margin: 0 0 45px;
+        margin: 0 0 25px;
         color: #000000;
-        font-size: 39px;
+        font-size: 32px;
         font-weight: 500;
+        @media (min-width: 425px) {
+            margin: 0 0 45px;
+            font-size: 39px;
+        }
         @media (min-width: 992px) {
             font-size: 48px;
         }
@@ -117,10 +130,13 @@ body {}
     &__description {
 
         line-height: 1.65;
+        @media (min-width: 425px) {
+            margin: 30px auto 52px;
+        }
         @media (min-width: 768px) {
             margin: 0 auto 52px;
         }
-        margin: 30px auto 52px;
+        margin: 15px auto;
         max-width: 540px;
 
         p {
@@ -129,10 +145,13 @@ body {}
     }
 
     &__arrow {
+        @media (min-width: 425px) {
+            bottom: 20px;
+        }
         cursor: pointer;
         --animate-duration: 2s;
         position: absolute;
-        bottom: 20px;
+        bottom: -15px;
         left: calc(50% - 40px);
 
         .icon_arrow-down {
@@ -147,7 +166,7 @@ body {}
 
 .secondSection {
     &__content {
-        padding: 48px 0 55px;
+        padding: 30px 0;
 
         @media (min-width: 768px) {
             padding: 92px 0 73px;
@@ -166,6 +185,14 @@ body {}
     &__description {
         line-height: 1.65;
         text-align: center;
+        max-width: 540px;
+        padding: 0 16px;
+        margin: 16px 0;
+    }
+
+    &__list {
+        line-height: 1.65;
+        text-align: left;
         max-width: 540px;
         padding: 0 16px;
         margin: 16px 0;
@@ -403,7 +430,10 @@ body {}
 
 .sixthSection {
     // margin-top: 29px;
-    padding-top: 92px;
+    padding-top: 45px;
+    @media (min-width: 768px) {
+        padding-top: 92px;
+    }
 
     &__content {
 
@@ -422,7 +452,7 @@ body {}
 
     &__item {
         width: 100%;
-        margin: 0 15px 30px;
+        margin: 30px 15px 0;
         @media (min-width: 768px) {
             width: calc(50% - 30px);
         }
@@ -605,7 +635,8 @@ body {}
         animation-delay: -0.16s;
         top: 33%;
         left: 50%;
-        transform: translateX(-50%, -50%);
+        // transform: translateX(-50%, -50%);
+        transform: translateX(-50%);
     }
 
     .loader:after,

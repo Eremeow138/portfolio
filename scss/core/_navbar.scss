@@ -51,11 +51,14 @@
 	}
 
 	&__toggle {
+		@media (min-width: 425px) {
+			top: 40px;
+		}
 		--animate-duration: 1.5s;
 		position: absolute;
 		color: #34547A;
 		left: 15px;
-		top: 40px;
+		top: 27px;
 		width: 34px;
 		height: 24px;
 		border: 4px solid;
