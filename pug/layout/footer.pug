@@ -2,15 +2,25 @@ footer.footer
     .container_center
         .footer__content
             .footer__developer
-                .footer__name Иванов Иван
+                .footer__name <?php echo SCF::get( 'footer__name' ); ?>
                 .footer__rights
                     p
-                    | (с) 2018. Все права защищены.
-                //- i.fa.fa-github(aria-hidden='true') &nbsp;
+                    | <?php echo SCF::get( 'footer__rights' ); ?>
+            .footer__design
+                a(href="http://d-e-n.ru/", target="_blank") <?php echo SCF::get( 'footer__design_name' ); ?>
             .footer__social
-                a.footer__link(href="https://vk.com/eremeow" target="_blank")
-                    i.icon_vk
-                a.footer__link(href="https://vk.com/eremeow" target="_blank")
-                    i.icon_vk
-                a.footer__link(href="https://vk.com/eremeow" target="_blank")
-                    i.icon_vk
+                |<?php
+                |    $footer__social = SCF::get('footer__social');
+                |
+                |    foreach ($footer__social as $item) {
+                |        echo '
+                |            <a class="footer__link" href="'.$item['footer__link'].'" target="_blank"><i class="icon_'.$item['footer__icon'].'"></i></a>
+                |        ';
+                |    };
+                |?>
+                //- a.footer__link(href="https://vk.com/eremeow" target="_blank")
+                //-     i.icon_vk
+                //- a.footer__link(href="https://vk.com/eremeow" target="_blank")
+                //-     i.icon_vk
+                //- a.footer__link(href="https://vk.com/eremeow" target="_blank")
+                //-     i.icon_vk

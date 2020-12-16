@@ -1,20 +1,23 @@
 header.header
     .header__content
         .header__left
-            a.header__logo(href="/")
-                img(src="img/logo.svg", alt="alt")
+            a.header__logo(href="/") <?php echo SCF::get( 'header__logo' ); ?>
+                //- img(src="img/logo.svg", alt="alt")
+                //- i.icon_cat
+
 
         nav.header__right
-            input.navbar__swicher#navbar_toggle(type="checkbox")
-            label(for="navbar_toggle").navbar__toggle
+            input.navbar__swicher#navbar_tog(type="checkbox")
+            label(for="navbar_tog").navbar__toggle
+            label(for="navbar_tog").navbar__toggle.navbar__toggle_scroll
             ul.navbar
                 li.navbar__item
-                    a.navbar__link(href=baseDir+"#firstScreen") Главная
+                    a.navbar__link(href="#firstScreen") Главная
                 li.navbar__item
-                    a.navbar__link(href=baseDir+"#secondSection") Об авторе
+                    a.navbar__link(href="#secondSection") Об авторе
                 li.navbar__item
-                    a.navbar__link(href=baseDir+"#sixthSection") Работы
+                    a.navbar__link(href="#sixthSection") Работы
                 li.navbar__item
-                    a.navbar__link(href=baseDir+"#fifthSection") Процесс
+                    a.navbar__link(href="#fifthSection") Процесс
                 li.navbar__item
-                    a.navbar__link(href=baseDir+"#eightSection") Контакты
+                    a.navbar__link(href="#eightSection") Контакты

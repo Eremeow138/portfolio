@@ -1,25 +1,30 @@
 //- -var version = '0.1';
 block variables
-    - var baseDir = "/portfolio/";
-    - var baseDir = "/";
+    //- - var baseDir = "";
+    - var baseDir = "wp-content/themes/portfolio/";
+
     - var pageTitle = "Portfolio";
 
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ru")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title=pageTitle
-
+        link(rel="shortcut icon", type="image/x-icon", href=baseDir+"/img/logo-image.ico")
         link(rel="stylesheet", type="text/css", href=baseDir+"css/style.css")
+        link(rel="stylesheet", type="text/css", href=baseDir+"css/animate.css")
     body
+
         .wrapper
+            //- .animeblock.animate__animated.animate__pulse.animate__infinite
             include header.pug 
 
             main.main__content
                 block content
 
         include footer.pug
-script(src="js/jquery.js")
-script(src="js/script.js")
+        script(src=baseDir+"js/jquery.js")
+        script(src=baseDir+"js/modal.js")
+        script(src=baseDir+"js/script.js")
